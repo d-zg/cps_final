@@ -1,0 +1,6 @@
+# Ignore any directory named "models" at any depth
+**/models/
+
+# Ignore any directory named "data" at any depth
+**/data/
+
