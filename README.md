@@ -1,5 +1,6 @@
-# PyTorch
+# Reproducibility
 
-Last updated: Sep 27th 2022
+Install the requiremed modules with `pip install -r requirements`. 
 
-This is the GitHub repository that acts as the default Workspace for Paperspace Gradient's PyTorch runtime.
+There are 
+
