@@ -23,6 +23,8 @@ Here were my results:
 
 ## Output Interpretation
 
+To train each baseline, open the train.ipynb specified below, then after it is done, open and run the cell for the eval.ipynb in the same folder. 
+
 - **Console output**  
   - During training, each epoch prints:  
     ```
