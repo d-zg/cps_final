@@ -108,7 +108,7 @@ We use the CIFAR‑10 dataset throughout.
 ---
 
 ## Baselines
-
+All parameters used are clearly documented in the code and were used for the results reported above. 
 ### 1. Learning on Labels (No Teacher)  
 Train the student purely on hard labels (no distillation).  
 - **Training notebook:**  
