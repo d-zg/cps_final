@@ -20,6 +20,55 @@ Here were my results:
 | Trajectories (random 10%)                          | 75.73             |
 | Logit‑Guided Targeted (Proposed, 10%)              | 76.71             |
 
+
+## Output Interpretation
+
+- **Console output**  
+  - During training, each epoch prints:  
+    ```
+    Epoch  10/200  Train Loss: 0.85  Train Acc: 72.3%  Val Loss: 0.78  Val Acc: 74.1%
+    ```  
+  - During evaluation, you’ll see:  
+    ```
+    Test Set Accuracy: 76.71%
+    ```
+
+- **Log files**  
+  - `./logs/train.log` collects the same epoch‑by‑epoch entries with timestamps.  
+  - Scan it to spot sudden drops or plateaus in loss or accuracy.
+
+- **Metrics JSON**  
+  - `./metrics/cifar10_training_metrics.json` is a line‑delimited JSON file.  
+  - Each line has keys:  
+    ```json
+    {
+      "epoch": 10,
+      "train_loss": 0.85,
+      "train_acc": 72.3,
+      "val_loss": 0.78,
+      "val_acc": 74.1
+    }
+    ```  
+  - Load it in Python to plot learning curves or compute statistics.
+
+- **TensorBoard**  
+  - Event files live under `runs/{baseline_name}/`.  
+  - Launch with:
+    ```bash
+    tensorboard --logdir runs/
+    ```  
+  - Inspect loss and accuracy curves, compare baselines side by side.
+
+- **Model checkpoints**  
+  - The best student model (by validation accuracy) is saved as  
+    `models/{baseline_name}_best_student_model.pth`.  
+  - You can reload it for further analysis or inference.
+
+- **Final test accuracy**  
+  - Use the printed “Test Set Accuracy” as the single‑number summary of each run.  
+  - Compare these across baselines to judge which approach yields the highest generalization.
+
+
 Below is a description of the each of the data, then the folders/baselines. 
 
 ## Data
