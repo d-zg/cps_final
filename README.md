@@ -6,6 +6,20 @@ This repository contains the code and notebooks for training and evaluating a se
 
 Install the requiremed modules with `pip install -r requirements`. Then you can run each of the training scripts, and subsequently after training you can run the test script which tests on the held out test set. 
 
+Here were my results: 
+
+| Method                                             | Test Accuracy (%) |
+|----------------------------------------------------|-------------------|
+| Learning on Labels (No Teacher)                    | 63.75             |
+| Teacher                                            | 81.23             |
+| Naive KD (Minimizing KL Divergence)                | 67.16             |
+| Patient & Consistent Algorithm                     | 78.08             |
+| FGSM‑Based KD (random 10%)                         | 79.20             |
+| FGSM‑Based KD (all inputs)                         | 76.74             |
+| Trajectories (all inputs)                          | 73.43             |
+| Trajectories (random 10%)                          | 75.73             |
+| Logit‑Guided Targeted (Proposed, 10%)              | 76.71             |
+
 Below is a description of the each of the folders/baselines. 
 
 ---
