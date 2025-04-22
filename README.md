@@ -20,7 +20,39 @@ Here were my results:
 | Trajectories (random 10%)                          | 75.73             |
 | Logit‑Guided Targeted (Proposed, 10%)              | 76.71             |
 
-Below is a description of the each of the folders/baselines. 
+Below is a description of the each of the data, then the folders/baselines. 
+
+## Data
+
+We use the CIFAR‑10 dataset throughout.  
+
+- **Automatic download via PyTorch**  
+  All code will fetch and cache CIFAR‑10 automatically. For example:
+  ```python
+  from torchvision.datasets import CIFAR10
+  from torchvision import transforms
+
+  transform = transforms.Compose([
+      transforms.RandomCrop(32, padding=4),
+      transforms.RandomHorizontalFlip(),
+      transforms.ToTensor(),
+      transforms.Normalize((0.4914, 0.4822, 0.4465),
+                           (0.2023, 0.1994, 0.2010)),
+  ])
+
+  train_set = CIFAR10(
+      root='./data',
+      train=True,
+      download=True,        # <— downloads if not already present
+      transform=transform
+  )
+  test_set = CIFAR10(
+      root='./data',
+      train=False,
+      download=True,        # <— downloads if not already present
+      transform=transform
+  )
+
 
 ---
 
@@ -84,7 +116,7 @@ Select the top 10 % “hard” examples by runner‑up logit and generate traje
 
 ---
 
-## Teacher model
+## Pretrained models/Teacher model
 
 Before running any KD baselines, train or load the ResNet‑18 teacher. The model file is included, so you should be fine to just run them. 
 
